@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C001",
+    "tipo": "contrato_obra_publica",
+    "clausulas": [
+      {
+        "id": "C001-01",
+        "texto": "El CONTRATISTA deberá pagar al CONTRATANTE una penalidad equivalente al cero punto cinco por ciento (0.5%) del valor total del contrato por cada día calendario de retraso en la entrega de la obra, sin que dicha penalidad supere el diez por ciento (10%) del valor total.",
+        "categoria": "tiempo",
+        "es_riesgo": true,
+        "notas": "penalidad por retraso — riesgo alto para contratista"
+      },
+      {
+        "id": "C001-02",
+        "texto": "El CONTRATANTE realizará el pago del anticipo equivalente al treinta por ciento (30%) del valor del contrato dentro de los quince (15) días hábiles siguientes a la legalización del mismo, previa constitución de la garantía de buen manejo y correcta inversión del anticipo.",
+        "categoria": "pago",
+        "es_riesgo": false,
+        "notas": "condición de pago estándar"
+      },
+      {
+        "id": "C001-03",
+        "texto": "El CONTRATISTA asumirá de manera exclusiva e integral la responsabilidad civil, penal y administrativa derivada de cualquier daño, perjuicio o lesión causados a terceros durante la ejecución de la obra, incluyendo daños a redes de servicios públicos, vías y propiedades adyacentes, eximiendo expresamente al CONTRATANTE de toda responsabilidad.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "transferencia total de responsabilidad al contratista — riesgo crítico"
+      },
+      {
+        "id": "C001-04",
+        "texto": "El plazo de ejecución de la obra objeto del presente contrato es de ciento ochenta (180) días calendario, contados a partir de la fecha de suscripción del acta de inicio.",
+        "categoria": "tiempo",
+        "es_riesgo": false,
+        "notas": "plazo estándar sin penalidad asociada en esta cláusula"
+      },
+      {
+        "id": "C001-05",
+        "texto": "El CONTRATANTE podrá dar por terminado unilateralmente el presente contrato en cualquier momento, sin expresión de causa, mediante comunicación escrita con un preaviso de cinco (5) días hábiles, sin que ello genere derecho a indemnización alguna a favor del CONTRATISTA, salvo el pago de las obras efectivamente ejecutadas.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "terminación unilateral sin indemnización — riesgo alto"
+      },
+      {
+        "id": "C001-06",
+        "texto": "El CONTRATISTA deberá constituir y mantener vigente durante toda la ejecución del contrato y hasta la liquidación del mismo, una póliza de seguro de responsabilidad civil extracontractual con una cobertura mínima de doscientos salarios mínimos legales mensuales vigentes (200 SMLMV).",
+        "categoria": "seguridad",
+        "es_riesgo": false,
+        "notas": "requisito de póliza estándar"
+      },
+      {
+        "id": "C001-07",
+        "texto": "Cualquier modificación en el alcance de los trabajos, especificaciones técnicas o cantidades de obra deberá ser aprobada previamente y por escrito por el CONTRATANTE. El CONTRATISTA no tendrá derecho a reconocimiento económico adicional por trabajos ejecutados sin dicha aprobación previa, aun cuando dichos trabajos sean necesarios para la correcta terminación de la obra.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "cambios de alcance sin reconocimiento económico — riesgo alto"
+      },
+      {
+        "id": "C001-08",
+        "texto": "Para efectos del presente contrato, se entiende por 'obra terminada' aquella que ha superado satisfactoriamente las pruebas de funcionamiento establecidas en el Anexo Técnico No. 1 y ha recibido el acta de recibo a satisfacción suscrita por el interventor designado por el CONTRATANTE.",
+        "categoria": "definicion_y_referencia",
+        "es_riesgo": false,
+        "notas": "definición contractual estándar"
+      }
+    ]
+  },
+  {
+    "id": "C002",
+    "tipo": "orden_de_compra_proveeduria",
+    "clausulas": [
+      {
+        "id": "C002-01",
+        "texto": "El PROVEEDOR garantiza que los materiales suministrados cumplen con las normas técnicas colombianas NTC aplicables. En caso de que los materiales presenten defectos de calidad, el PROVEEDOR deberá reemplazarlos a su costo dentro de los cinco (5) días hábiles siguientes al requerimiento, asumiendo además los costos de desmontaje, transporte y reinstalación.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "costos de reemplazo más costos asociados — riesgo financiero para proveedor"
+      },
+      {
+        "id": "C002-02",
+        "texto": "El pago se realizará a treinta (30) días calendario contados desde la fecha de radicación de la factura, siempre que los bienes hayan sido recibidos a satisfacción y la factura cumpla con los requisitos legales vigentes.",
+        "categoria": "pago",
+        "es_riesgo": false,
+        "notas": "condición de pago estándar 30 días"
+      },
+      {
+        "id": "C002-03",
+        "texto": "El COMPRADOR se reserva el derecho de modificar unilateralmente las cantidades solicitadas hasta en un treinta por ciento (30%) en más o en menos, sin que ello constituya incumplimiento del contrato ni genere obligación de pago por las cantidades no adquiridas.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "variación unilateral de cantidades — riesgo de ingresos para proveedor"
+      },
+      {
+        "id": "C002-04",
+        "texto": "El PROVEEDOR indemnizará y mantendrá indemne al COMPRADOR frente a cualquier reclamación, demanda, pérdida, daño, costo o gasto (incluyendo honorarios de abogados) que surja de o esté relacionado con el incumplimiento de las obligaciones del PROVEEDOR bajo esta orden de compra.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "cláusula de indemnización amplia incluyendo honorarios legales — riesgo crítico"
+      },
+      {
+        "id": "C002-05",
+        "texto": "La entrega de los bienes se realizará en la bodega del COMPRADOR ubicada en la dirección indicada en la carátula de esta orden, en días hábiles entre las 8:00 a.m. y las 5:00 p.m.",
+        "categoria": "procedimiento",
+        "es_riesgo": false,
+        "notas": "condición logística estándar"
+      },
+      {
+        "id": "C002-06",
+        "texto": "En caso de incumplimiento en los plazos de entrega pactados, el PROVEEDOR pagará al COMPRADOR una suma equivalente al uno por ciento (1%) del valor de los bienes no entregados oportunamente por cada día de retraso, como estimación anticipada de perjuicios, sin perjuicio de las demás acciones legales a que haya lugar.",
+        "categoria": "tiempo",
+        "es_riesgo": true,
+        "notas": "penalidad diaria por retraso en entrega — riesgo financiero"
+      },
+      {
+        "id": "C002-07",
+        "texto": "Los precios pactados en la presente orden de compra son fijos e invariables durante toda la vigencia del contrato, sin que proceda ningún tipo de ajuste por variación en costos de materias primas, mano de obra, fletes o cualquier otro factor.",
+        "categoria": "pago",
+        "es_riesgo": true,
+        "notas": "precio fijo sin ajuste — riesgo de pérdida por inflación para proveedor"
+      },
+      {
+        "id": "C002-08",
+        "texto": "Para los efectos de esta orden de compra, 'día hábil' significa cualquier día de lunes a viernes, excluyendo los días festivos oficiales de la República de Colombia.",
+        "categoria": "definicion_y_referencia",
+        "es_riesgo": false,
+        "notas": "definición estándar"
+      }
+    ]
+  },
+  {
+    "id": "C003",
+    "tipo": "subcontrato_obra",
+    "clausulas": [
+      {
+        "id": "C003-01",
+        "texto": "El SUBCONTRATISTA renuncia expresamente a cualquier reclamación por concepto de mayores costos derivados de condiciones del terreno distintas a las previstas, condiciones climáticas adversas, o cualquier otra circunstancia imprevista, asumiendo íntegramente el riesgo de ejecución de los trabajos.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "renuncia a reclamaciones por imprevistos — riesgo muy alto"
+      },
+      {
+        "id": "C003-02",
+        "texto": "El CONTRATISTA principal pagará al SUBCONTRATISTA dentro de los diez (10) días hábiles siguientes a que el CONTRATISTA principal reciba el pago del CONTRATANTE, condicionando expresamente el pago al SUBCONTRATISTA a la recepción previa de los recursos por parte del CONTRATISTA principal.",
+        "categoria": "pago",
+        "es_riesgo": true,
+        "notas": "cláusula pay-when-paid — riesgo de flujo de caja para subcontratista"
+      },
+      {
+        "id": "C003-03",
+        "texto": "El SUBCONTRATISTA deberá ejecutar los trabajos de acuerdo con el programa de obra aprobado. Cualquier retraso que afecte la ruta crítica del proyecto será causal de terminación inmediata del subcontrato, sin derecho a indemnización.",
+        "categoria": "tiempo",
+        "es_riesgo": true,
+        "notas": "terminación por retraso en ruta crítica sin indemnización — riesgo alto"
+      },
+      {
+        "id": "C003-04",
+        "texto": "El SUBCONTRATISTA deberá acreditar afiliación y pago al día de todos sus trabajadores al sistema de seguridad social integral (salud, pensión y riesgos laborales) como condición previa para el inicio de cualquier actividad en obra.",
+        "categoria": "seguridad",
+        "es_riesgo": false,
+        "notas": "requisito legal estándar de seguridad social"
+      },
+      {
+        "id": "C003-05",
+        "texto": "El CONTRATISTA principal podrá ordenar al SUBCONTRATISTA la ejecución de trabajos adicionales hasta por un veinte por ciento (20%) del valor del subcontrato, a los precios unitarios pactados, sin que ello requiera la suscripción de un contrato adicional.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "trabajos adicionales obligatorios a precios fijos — riesgo si hay inflación"
+      },
+      {
+        "id": "C003-06",
+        "texto": "El SUBCONTRATISTA responderá solidariamente con el CONTRATISTA principal frente al CONTRATANTE por todos los vicios ocultos de la obra ejecutada, durante el período de garantía establecido en el contrato principal.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "responsabilidad solidaria por vicios ocultos — riesgo legal"
+      },
+      {
+        "id": "C003-07",
+        "texto": "Las controversias que surjan entre las partes en relación con la ejecución, interpretación o terminación del presente subcontrato serán resueltas mediante arbitraje ante el Centro de Arbitraje y Conciliación de la Cámara de Comercio de Bogotá, cuyo laudo será definitivo y obligatorio para las partes.",
+        "categoria": "procedimiento",
+        "es_riesgo": false,
+        "notas": "cláusula arbitral estándar"
+      },
+      {
+        "id": "C003-08",
+        "texto": "Se entiende por 'ruta crítica' la secuencia de actividades del programa de obra cuya duración determina el plazo total del proyecto, identificada en el diagrama de Gantt aprobado por el interventor.",
+        "categoria": "definicion_y_referencia",
+        "es_riesgo": false,
+        "notas": "definición técnica estándar"
+      }
+    ]
+  },
+  {
+    "id": "C004",
+    "tipo": "contrato_suministro_equipos",
+    "clausulas": [
+      {
+        "id": "C004-01",
+        "texto": "El PROVEEDOR será responsable de todos los daños y perjuicios que se deriven del uso de los equipos suministrados, incluyendo daños a personas, bienes del COMPRADOR y bienes de terceros, durante toda la vida útil de los equipos, independientemente de si el daño se produce por defecto de fabricación, diseño o instalación.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "responsabilidad por toda la vida útil del equipo — riesgo desproporcionado"
+      },
+      {
+        "id": "C004-02",
+        "texto": "El COMPRADOR podrá retener hasta el diez por ciento (10%) del valor de cada factura como fondo de garantía, el cual será liberado únicamente al vencimiento del período de garantía de los equipos, establecido en veinticuatro (24) meses.",
+        "categoria": "pago",
+        "es_riesgo": true,
+        "notas": "retención del 10% por 24 meses — impacto severo en flujo de caja"
+      },
+      {
+        "id": "C004-03",
+        "texto": "Los equipos deberán ser entregados, instalados y puestos en funcionamiento dentro de los sesenta (60) días calendario siguientes a la firma del contrato.",
+        "categoria": "tiempo",
+        "es_riesgo": false,
+        "notas": "plazo de entrega e instalación estándar"
+      },
+      {
+        "id": "C004-04",
+        "texto": "El PROVEEDOR deberá mantener disponibilidad de repuestos y soporte técnico para los equipos suministrados por un período mínimo de diez (10) años contados desde la fecha de entrega, bajo pena de pagar una indemnización equivalente al valor total del contrato.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "obligación de soporte 10 años con penalidad equivalente al contrato — riesgo extremo"
+      },
+      {
+        "id": "C004-05",
+        "texto": "Los equipos objeto de este contrato corresponden a los descritos en las especificaciones técnicas del Anexo A, el cual forma parte integral del presente contrato.",
+        "categoria": "definicion_y_referencia",
+        "es_riesgo": false,
+        "notas": "referencia a anexo técnico estándar"
+      },
+      {
+        "id": "C004-06",
+        "texto": "El PROVEEDOR deberá contratar y mantener vigente durante la ejecución del contrato un seguro todo riesgo para los equipos durante el transporte e instalación, con una cobertura equivalente al ciento veinte por ciento (120%) del valor de los equipos.",
+        "categoria": "seguridad",
+        "es_riesgo": false,
+        "notas": "requisito de seguro estándar para equipos"
+      },
+      {
+        "id": "C004-07",
+        "texto": "Cualquier reclamación del PROVEEDOR por concepto de ajuste de precios, mayores cantidades o trabajos adicionales deberá ser presentada dentro de los cinco (5) días hábiles siguientes al hecho que la origina, so pena de caducidad del derecho a reclamar.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "caducidad de reclamaciones en 5 días — riesgo de pérdida de derechos"
+      },
+      {
+        "id": "C004-08",
+        "texto": "El COMPRADOR podrá ceder el presente contrato a cualquier empresa de su grupo empresarial sin requerir autorización previa del PROVEEDOR, quien deberá continuar ejecutando sus obligaciones frente al cesionario en los mismos términos pactados.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "cesión unilateral del contrato — riesgo de cambio de contraparte"
+      }
+    ]
+  },
+  {
+    "id": "C005",
+    "tipo": "contrato_consultoria_tecnica",
+    "clausulas": [
+      {
+        "id": "C005-01",
+        "texto": "El CONSULTOR cede al CONTRATANTE todos los derechos patrimoniales de autor sobre los entregables producidos en el marco de este contrato, incluyendo informes, planos, diseños, modelos y cualquier otro documento técnico, sin limitación de tiempo, territorio ni modalidad de uso.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "cesión total de derechos de autor sin compensación adicional — riesgo para consultor"
+      },
+      {
+        "id": "C005-02",
+        "texto": "Los honorarios del CONSULTOR serán pagados mensualmente, previa presentación de informe de avance aprobado por el supervisor del contrato. El CONTRATANTE tendrá hasta quince (15) días hábiles para aprobar o rechazar el informe.",
+        "categoria": "pago",
+        "es_riesgo": false,
+        "notas": "condición de pago mensual estándar"
+      },
+      {
+        "id": "C005-03",
+        "texto": "El CONSULTOR mantendrá la más estricta confidencialidad sobre toda la información a la que tenga acceso en desarrollo del contrato, incluyendo información técnica, financiera y comercial del CONTRATANTE, durante la vigencia del contrato y por un período de cinco (5) años posteriores a su terminación.",
+        "categoria": "seguridad",
+        "es_riesgo": false,
+        "notas": "cláusula de confidencialidad estándar"
+      },
+      {
+        "id": "C005-04",
+        "texto": "El CONSULTOR responderá por los errores u omisiones en los diseños o estudios entregados, incluyendo los sobrecostos de construcción que se deriven de dichos errores, sin límite de cuantía, durante el período de garantía de estabilidad de la obra.",
+        "categoria": "roles_y_responsabilidades",
+        "es_riesgo": true,
+        "notas": "responsabilidad ilimitada por errores de diseño — riesgo crítico"
+      },
+      {
+        "id": "C005-05",
+        "texto": "El plazo del contrato es de seis (6) meses, prorrogable de mutuo acuerdo entre las partes mediante otrosí suscrito con al menos treinta (30) días de anticipación al vencimiento.",
+        "categoria": "tiempo",
+        "es_riesgo": false,
+        "notas": "plazo con prórroga de mutuo acuerdo — estándar"
+      },
+      {
+        "id": "C005-06",
+        "texto": "El CONTRATANTE podrá suspender unilateralmente la ejecución del contrato hasta por noventa (90) días calendario sin que ello constituya incumplimiento, período durante el cual no se causarán honorarios a favor del CONSULTOR.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "suspensión unilateral sin pago por 90 días — riesgo de flujo de caja"
+      },
+      {
+        "id": "C005-07",
+        "texto": "Para efectos de este contrato, 'entregable aprobado' es aquel que ha recibido concepto favorable por escrito del supervisor del contrato, sin observaciones pendientes de subsanar.",
+        "categoria": "definicion_y_referencia",
+        "es_riesgo": false,
+        "notas": "definición de entregable aprobado"
+      },
+      {
+        "id": "C005-08",
+        "texto": "El CONSULTOR no podrá subcontratar ninguna parte de los servicios objeto de este contrato sin autorización previa y escrita del CONTRATANTE. La subcontratación no autorizada será causal de terminación inmediata del contrato sin derecho a indemnización.",
+        "categoria": "procedimiento",
+        "es_riesgo": true,
+        "notas": "prohibición de subcontratación con terminación inmediata — riesgo operativo"
+      }
+    ]
+  }
+]
