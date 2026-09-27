@@ -1,0 +1,406 @@
+{
+  "rules": {
+    "metrics": {
+      "method": "rules",
+      "n_clausulas": 40,
+      "tp": 15,
+      "fp": 0,
+      "tn": 17,
+      "fn": 8,
+      "precision": 1.0,
+      "recall": 0.6522,
+      "f1": 0.7895,
+      "accuracy_riesgo": 0.8,
+      "accuracy_categoria": 0.95
+    },
+    "per_category": {
+      "tiempo": {
+        "precision": 1.0,
+        "recall": 0.3333,
+        "f1": 0.5
+      },
+      "pago": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "roles_y_responsabilidades": {
+        "precision": 1.0,
+        "recall": 0.6667,
+        "f1": 0.8
+      },
+      "procedimiento": {
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1": 0.7692
+      },
+      "seguridad": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "definicion_y_referencia": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "predictions": [
+      {
+        "id": "C001-01",
+        "categoria_real": "tiempo",
+        "categoria_predicha": "tiempo",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C001-02",
+        "categoria_real": "pago",
+        "categoria_predicha": "pago",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C001-03",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "eximiendo.{0,30}(?:contratante|comprador|cliente)"
+        ]
+      },
+      {
+        "id": "C001-04",
+        "categoria_real": "tiempo",
+        "categoria_predicha": "tiempo",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C001-05",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "sin expresi[oó]n de causa"
+        ]
+      },
+      {
+        "id": "C001-06",
+        "categoria_real": "seguridad",
+        "categoria_predicha": "seguridad",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C001-07",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C001-08",
+        "categoria_real": "definicion_y_referencia",
+        "categoria_predicha": "definicion_y_referencia",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C002-01",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C002-02",
+        "categoria_real": "pago",
+        "categoria_predicha": "pago",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C002-03",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "modificar unilateralmente"
+        ]
+      },
+      {
+        "id": "C002-04",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "incluyendo honorarios de abogados"
+        ]
+      },
+      {
+        "id": "C002-05",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C002-06",
+        "categoria_real": "tiempo",
+        "categoria_predicha": "tiempo",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C002-07",
+        "categoria_real": "pago",
+        "categoria_predicha": "pago",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "invariable[s]?"
+        ]
+      },
+      {
+        "id": "C002-08",
+        "categoria_real": "definicion_y_referencia",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C003-01",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "renuncia.{0,30}reclamaci[oó]n",
+          "asumiendo.{0,30}(?:[ií]ntegramente|exclusivamente).{0,30}riesgo"
+        ]
+      },
+      {
+        "id": "C003-02",
+        "categoria_real": "pago",
+        "categoria_predicha": "pago",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "condicionando.{0,40}pago"
+        ]
+      },
+      {
+        "id": "C003-03",
+        "categoria_real": "tiempo",
+        "categoria_predicha": "tiempo",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "terminaci[oó]n.{0,30}(?:inmediata|retraso|ruta cr[ií]tica)",
+          "ruta cr[ií]tica.{0,60}terminaci[oó]n"
+        ]
+      },
+      {
+        "id": "C003-04",
+        "categoria_real": "seguridad",
+        "categoria_predicha": "seguridad",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C003-05",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C003-06",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C003-07",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C003-08",
+        "categoria_real": "definicion_y_referencia",
+        "categoria_predicha": "definicion_y_referencia",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C004-01",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "toda la vida [uú]til"
+        ]
+      },
+      {
+        "id": "C004-02",
+        "categoria_real": "pago",
+        "categoria_predicha": "pago",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "fondo de garant[ií]a"
+        ]
+      },
+      {
+        "id": "C004-03",
+        "categoria_real": "tiempo",
+        "categoria_predicha": "tiempo",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C004-04",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C004-05",
+        "categoria_real": "definicion_y_referencia",
+        "categoria_predicha": "definicion_y_referencia",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C004-06",
+        "categoria_real": "seguridad",
+        "categoria_predicha": "seguridad",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C004-07",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "caducidad.{0,30}(?:reclamar|reclamaci[oó]n|derecho)"
+        ]
+      },
+      {
+        "id": "C004-08",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C005-01",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "cede.{0,30}derechos.{0,30}(?:patrimoniales|autor)"
+        ]
+      },
+      {
+        "id": "C005-02",
+        "categoria_real": "pago",
+        "categoria_predicha": "pago",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C005-03",
+        "categoria_real": "seguridad",
+        "categoria_predicha": "seguridad",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C005-04",
+        "categoria_real": "roles_y_responsabilidades",
+        "categoria_predicha": "roles_y_responsabilidades",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "sin l[ií]mite de cuant[ií]a",
+          "sobrecostos.{0,30}(?:construcci[oó]n|obra).{0,30}(?:errores|dise[nñ]o)"
+        ]
+      },
+      {
+        "id": "C005-05",
+        "categoria_real": "tiempo",
+        "categoria_predicha": "tiempo",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C005-06",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "procedimiento",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "suspender unilateralmente",
+          "no.{0,20}causar[aá]n.{0,20}honorarios"
+        ]
+      },
+      {
+        "id": "C005-07",
+        "categoria_real": "definicion_y_referencia",
+        "categoria_predicha": "definicion_y_referencia",
+        "es_riesgo_real": false,
+        "es_riesgo_predicho": false,
+        "patrones_activados": []
+      },
+      {
+        "id": "C005-08",
+        "categoria_real": "procedimiento",
+        "categoria_predicha": "tiempo",
+        "es_riesgo_real": true,
+        "es_riesgo_predicho": true,
+        "patrones_activados": [
+          "terminaci[oó]n.{0,30}(?:inmediata|retraso|ruta cr[ií]tica)",
+          "subcontrataci[oó]n.{0,30}(?:no autorizada|sin autorización).{0,30}terminaci[oó]n"
+        ]
+      }
+    ]
+  }
+}
