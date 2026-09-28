@@ -1,5 +1,5 @@
 """
-Clasificador basado en LLM (OpenAI-compatible API).
+Clasificador basado en LLM (Google Gemini API — free tier).
 Usa prompt estructurado con la taxonomía Moon et al. (2022) adaptada.
 """
 
@@ -9,10 +9,11 @@ import time
 from dataclasses import dataclass
 
 try:
-    from openai import OpenAI
-    OPENAI_AVAILABLE = True
+    from google import genai
+    from google.genai import types
+    GEMINI_AVAILABLE = True
 except ImportError:
-    OPENAI_AVAILABLE = False
+    GEMINI_AVAILABLE = False
 
 
 SYSTEM_PROMPT = """Eres un experto en análisis de contratos de obra pública y proveeduría en Colombia.
@@ -26,21 +27,14 @@ Categorías:
 - roles_y_responsabilidades: indemnizaciones, responsabilidades, obligaciones de las partes
 - definicion_y_referencia: definiciones contractuales, referencias a anexos
 
-Responde ÚNICAMENTE con un JSON con esta estructura exacta:
-{
-  "categoria": "<una de las seis categorías>",
-  "es_riesgo": <true o false>,
-  "razon": "<explicación breve en máximo 20 palabras>"
-}
+Responde ÚNICAMENTE con un JSON con esta estructura exacta (sin markdown, sin bloques de código):
+{"categoria": "<una de las seis categorías>", "es_riesgo": <true o false>, "razon": "<máximo 20 palabras>"}
 
 Una cláusula ES de riesgo si contiene: penalidades desproporcionadas, transferencia unilateral de responsabilidad,
 terminación sin indemnización, precios fijos sin ajuste, retenciones prolongadas, obligaciones ilimitadas,
 renuncia a derechos, o condiciones que favorecen desproporcionadamente a una parte."""
 
-USER_PROMPT_TEMPLATE = """Clasifica esta cláusula contractual:
-
-"{texto}"
-"""
+USER_PROMPT_TEMPLATE = 'Clasifica esta cláusula contractual:\n\n"{texto}"'
 
 
 @dataclass
@@ -56,60 +50,59 @@ class LLMResult:
     error: str | None = None
 
 
-def classify_clausula_llm(clausula: dict, client=None, model: str = "gpt-4o-mini") -> LLMResult:
-    if not OPENAI_AVAILABLE or client is None:
+def classify_clausula_llm(clausula: dict, client=None, model: str = "gemini-3.8-flash") -> LLMResult:
+    if not GEMINI_AVAILABLE or client is None:
         return LLMResult(
-            id=clausula["id"],
-            texto=clausula["texto"],
-            categoria_predicha="",
-            es_riesgo_predicho=False,
-            categoria_real=clausula["categoria"],
-            es_riesgo_real=clausula["es_riesgo"],
-            razon="",
-            tokens_usados=0,
-            error="OpenAI client no disponible",
+            id=clausula["id"], texto=clausula["texto"],
+            categoria_predicha="", es_riesgo_predicho=False,
+            categoria_real=clausula["categoria"], es_riesgo_real=clausula["es_riesgo"],
+            razon="", tokens_usados=0, error="Gemini client no disponible",
         )
 
     try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": USER_PROMPT_TEMPLATE.format(texto=clausula["texto"])},
-            ],
-            temperature=0,
-            response_format={"type": "json_object"},
-        )
-        raw = response.choices[0].message.content
-        parsed = json.loads(raw)
+        prompt = f"{SYSTEM_PROMPT}\n\n{USER_PROMPT_TEMPLATE.format(texto=clausula['texto'])}"
+        for attempt in range(4):
+            try:
+                response = client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(temperature=0),
+                )
+                break
+            except Exception as e:
+                if attempt == 3:
+                    raise
+                wait = 15 * (attempt + 1)
+                print(f"  [{clausula['id']}] reintento {attempt+1}/3 en {wait}s ({e})")
+                time.sleep(wait)
+        raw = response.text.strip()
+        # Limpiar posibles bloques markdown que el modelo agregue
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        parsed = json.loads(raw.strip())
+        tokens = response.usage_metadata.total_token_count if response.usage_metadata else 0
         return LLMResult(
-            id=clausula["id"],
-            texto=clausula["texto"],
+            id=clausula["id"], texto=clausula["texto"],
             categoria_predicha=parsed.get("categoria", ""),
-            es_riesgo_predicho=parsed.get("es_riesgo", False),
-            categoria_real=clausula["categoria"],
-            es_riesgo_real=clausula["es_riesgo"],
-            razon=parsed.get("razon", ""),
-            tokens_usados=response.usage.total_tokens,
+            es_riesgo_predicho=bool(parsed.get("es_riesgo", False)),
+            categoria_real=clausula["categoria"], es_riesgo_real=clausula["es_riesgo"],
+            razon=parsed.get("razon", ""), tokens_usados=tokens,
         )
     except Exception as e:
         return LLMResult(
-            id=clausula["id"],
-            texto=clausula["texto"],
-            categoria_predicha="",
-            es_riesgo_predicho=False,
-            categoria_real=clausula["categoria"],
-            es_riesgo_real=clausula["es_riesgo"],
-            razon="",
-            tokens_usados=0,
-            error=str(e),
+            id=clausula["id"], texto=clausula["texto"],
+            categoria_predicha="", es_riesgo_predicho=False,
+            categoria_real=clausula["categoria"], es_riesgo_real=clausula["es_riesgo"],
+            razon="", tokens_usados=0, error=str(e),
         )
 
 
-def get_client(api_key: str | None = None) -> "OpenAI | None":
-    if not OPENAI_AVAILABLE:
+def get_client(api_key: str | None = None):
+    if not GEMINI_AVAILABLE:
         return None
-    key = api_key or os.getenv("OPENAI_API_KEY")
+    key = api_key or os.getenv("GEMINI_API_KEY")
     if not key:
         return None
-    return OpenAI(api_key=key)
+    return genai.Client(api_key=key)

@@ -6,6 +6,7 @@ Genera métricas y guarda resultados en results/.
 import json
 import sys
 import os
+import time
 from pathlib import Path
 from collections import defaultdict
 
@@ -126,9 +127,15 @@ def run_evaluation(use_llm: bool = False, api_key: str | None = None):
     if use_llm:
         client = get_client(api_key)
         if client is None:
-            print("\nLLM: cliente no disponible (falta OPENAI_API_KEY o paquete openai)")
+            print("\nLLM: cliente no disponible (falta GEMINI_API_KEY o paquete google-genai)")
         else:
-            llm_results = [classify_clausula_llm(c, client) for c in clausulas]
+            llm_results = []
+            for i, c in enumerate(clausulas):
+                print(f"  LLM clasificando {i+1}/{len(clausulas)}: {c['id']}...", end=" ", flush=True)
+                r = classify_clausula_llm(c, client)
+                print("OK" if not r.error else f"ERROR: {r.error[:60]}")
+                llm_results.append(r)
+                time.sleep(4)  # respetar free tier (20 RPD, ~10 RPM)
             llm_metrics = compute_metrics(llm_results, "llm")
             llm_per_cat = per_category_metrics(llm_results)
 
@@ -136,7 +143,7 @@ def run_evaluation(use_llm: bool = False, api_key: str | None = None):
             _print_metrics(llm_metrics)
 
             total_tokens = sum(r.tokens_usados for r in llm_results)
-            print(f"Tokens totales usados: {total_tokens}")
+            print(f"Tokens totales usados : {total_tokens}")
 
             output["llm"] = {
                 "metrics": llm_metrics,
@@ -182,5 +189,5 @@ def _print_metrics(m: dict):
 
 if __name__ == "__main__":
     use_llm = "--llm" in sys.argv
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY")
     run_evaluation(use_llm=use_llm, api_key=api_key)
